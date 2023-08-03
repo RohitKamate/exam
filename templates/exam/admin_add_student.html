@@ -1,0 +1,26 @@
+{% extends 'exam/adminbase.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="container">
+<h2 style="text-align:center;">Add Course</h2>
+<form method="POST" autocomplete="off" style="margin:100px;margin-top: 0px;">
+    {%csrf_token%}
+    <label for="first_name">First Name</label>
+        {% render_field userForm.first_name class="form-control form-control-sm rounded-0" placeholder="First Name" %}
+    <label for="last_name">Last Name</label>
+        {% render_field userForm.last_name class="form-control form-control-sm rounded-0" placeholder="Last Name" %}
+    <label for="name">name</label>
+        {% render_field studentForm.name class="form-control form-control-sm rounded-0" placeholder="name" %}
+    <label for="student_id">Student_id</label>
+        {% render_field studentForm.student_id class="form-control form-control-sm rounded-0" placeholder="student_id" %}
+    <label for="username">Username</label>
+        {% render_field userForm.username class="form-control form-control-sm rounded-0" placeholder="Username" %}
+    <label for="password">Password</label>
+        {% render_field userForm.password class="form-control form-control-sm rounded-0" placeholder="Password" %} <br><br>
+<br><br>
+
+    <button type="submit" class="btn btn-primary rounded-0">Add user</button>
+  </form>
+<br><br><br>
+{% endblock content %}
